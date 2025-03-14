@@ -1,0 +1,516 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+/* --- Landing Page --- */
+/* Page 1 */
+.landing_page {
+	background-image: url('1.jpg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	overflow: hidden;
+	min-height: 100vh;
+}
+
+.landing_page::before {
+	content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+	z-index: 0;
+	
+}
+
+.nav_lp_1 {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	align-items: center;
+	padding: 20px 30px;
+	background: rgba(0,0,0,0.5);
+	box-sizing: border-box;
+	z-index: 1;
+	position: relative;
+	
+}
+
+.nav_logo a {
+	text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 10px 15px;
+    transition: 0.3s;
+}
+
+.nav_menu {
+	list-style: none;
+	display: flex;
+	gap: 20px;
+}
+
+.nav_menu li a:hover {
+	background: white;
+	color: black;
+	border-radius: 5px;	
+}
+
+.nav_menu li a {
+	text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 10px 15px;
+    transition: 0.3s;
+}
+
+.article_lp {
+	margin-top: 15px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 80vh;
+	padding: 20px;
+	z-index: 1;
+	position: relative;
+}
+
+.article_lp article {
+	background-color:  rgba(0,0,0,0.5);
+	padding: 40px;
+	max-width: 750px;
+	border-radius: 10px;
+}
+
+.Judul_isi_lp_1 {
+	font-family: 'Inter', sans-serif;
+	font-weight: 800;
+	font-size: 48px;
+	margin-bottom: 20px;
+	text-align: center;
+	color: #FFFFFF;
+
+}
+
+.Isi_isi_lp_1 {
+	color: #f7e4c4;
+	text-align: center;
+}
+
+
+.Isi_isi_lp_1_1 {
+	font-family: 'Plus Jakarta Sans', sans-serif;
+	font-weight: 400;
+	font-size: 22px;	
+	margin-bottom: 15px;
+}
+
+.Isi_isi_lp_1_2 {
+	font-family: 'Plus Jakarta Sans', sans-serif;
+	font-weight: 400;
+	font-size: 22px;	
+	margin-bottom: 30px;
+}
+
+.button_lp_1 {
+	background-color: #ffa54c;
+	font-size: 24px;
+	font-weight: 600;
+	font-family: 'Inter', sans-serif;
+	border-radius: 5px;
+	border: none;
+	padding: 10px 20px;
+	cursor: pointer;
+	align-items: center;
+	display: block; 
+	margin-left: auto;
+	margin-right: auto;
+	color:#003092 
+}
+
+.button_lp_1:hover {
+	background-color: #ff8c00;
+}
+
+/* Page 2 */
+
+.landing_page2 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 50px;
+	gap: 50px;
+	background-color: #00879E;
+	color: White;
+}
+
+.container_about_lp2 {
+	width: 40%;
+	height: 250px;
+	margin: auto;
+}
+
+.container_about_lp2 h2 {
+	font-family: 'Inria Serif', sans-serif;
+	font-size: 48px;
+	font-weight: 600;
+	margin-bottom: 15px;
+}
+
+.container_about_lp2 p {
+	font-family: 'Inria Serif', sans-serif;
+	font-size: 20px;
+	font-weight: 400;
+}
+
+.video_about_lp2 {
+	width: 40%;
+	margin: auto;
+	height: 250px;
+	box-shadow: 2px 5px 10px rgba(0,0,0,0.5);
+	background-color: white;
+}
+
+.video_about_lp2_1 {
+	width: 100%;
+	height: 100%;
+}
+
+.video_about_lp2:hover {
+	transform: scale(1.05);
+	transition: 0.2s ease-in-out;
+}
+
+/* Page 3 */
+
+.landing_page3 {
+	height: 630px;
+	padding-bottom: 50px;
+}
+.landing_page3 h2 {
+	font-family: 'Inria Serif',sans-serif;
+	font-weight: 800;
+	font-size: 48px;
+	margin-bottom: 50px;
+	margin-top: 30px;
+	text-align: center;
+}
+
+.layanan {
+	display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-evenly; 
+    gap: 20px; 
+}
+
+.layanan_card {
+	background: white;
+	padding: 20px;
+	width: 300px;
+	box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+	text-align: center;
+	transition: 0.3s ease-in-out;
+	border: 1 px solid #000;
+	margin-bottom: 10px;
+}
+
+.layanan_card:hover {
+	transform: scale(1.05);
+	cursor: pointer;
+}
+
+.layanan_header {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	justify-content: space-evenly; 
+	
+}
+
+.layanan_header img {
+	width: 40px;
+	height: 40px;
+	margin-bottom: 15px;
+	margin-left: 30px; 
+}
+
+
+.layanan_card h3 {
+	font-family: 'Inria Serif', sans-serif;
+	font-size: 24px;
+	font-weight: 600;
+	margin-bottom: 15px;
+}
+
+.layanan_card p {
+	font-family: 'Inria Serif', sans-serif;
+	font-size: 20px;
+	font-weight: 400;
+}
+
+/* Page 4 */
+
+.landing_page4 {
+	background-color: #003092;
+	padding: 50px;
+	text-align: center;
+}
+
+.landing_page4 h2 {
+	font-family: 'Inria Serif', sans-serif;
+	font-size: 48px;
+	font-weight: 600;
+	color: white;
+	margin-bottom: 50px;
+}
+
+.klien {
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+	flex-wrap: wrap;
+}
+
+.klien_card {
+	background-color: white;
+	width: 200px;
+	padding: 20px;
+	text-align: center;
+	box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+	transition: 0.3s ease-in-out;
+}
+
+.klien_card:hover {
+	transform: scale(1.05);
+	cursor: pointer;
+}
+
+.klien_card img {
+	width: 100px;
+	height: 80px;
+	object-fit: contain;
+	display: block;
+	margin: auto;
+}
+
+.klien_card h3 {
+	font-family: 'Inria Serif',sans-serif;
+	font-size: 20px;
+	font-weight: 400;
+	margin-bottom: 15px;
+	margin-top: 15px;
+}
+
+.klien_card p {
+	font-family: 'Inria Serif',sans-serif;
+	font-size: 14px;
+	font-weight: 400;
+	margin-bottom: 15px;
+}
+
+/* Page 5 */
+
+.landing_page5 {
+	background-color: #FFAB5B;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.lp5 {
+	display: flex;
+	margin: auto;
+	padding: 20px;
+	width: 800px;
+	flex-direction: column;
+}
+
+.landing_page5 h2 {
+	text-align: center;
+	font-family: 'Inria Serif', sans-serif;
+	font-size: 48px;
+	font-weight: 600;
+	margin-bottom: 50px;	
+}
+
+.pertanyaan {
+	margin-bottom: 15px;
+}
+
+.Q {
+	font-family: 'Inria Serif', sans-serif;
+	font-size: 24px;
+	font-weight: 600;
+}
+
+.A {
+	font-family: 'Inria Serif', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+}
+
+/* Page 6 */
+
+.landing_page6 {
+	background-color: #FCEED4;
+	padding: 50px 0;
+	display: flex;
+	justify-content: center;
+}
+
+.container_lp6 {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 800px;
+}
+
+.teks_lp6 {
+	max-width: 300px;
+	margin-left: 50px;
+}
+
+.teks_lp6 h2 {
+	font-family: 'Inria Serif', sans-serif;
+	font-size: 36px;
+	font-weight: 400;
+	margin-bottom: 20px;
+}
+
+.teks_lp6 p {
+	font-family: 'Inria Serif', sans-serif;
+	font-size: 20px;
+	font-weight: 400;
+}
+
+.tombol_lp6 {
+	display: flex;
+	align-items: center;
+	margin-right: 100px;
+}
+
+.tombol_lp6_1 {
+	font-family: 'Inria Serif', sans-serif;
+	font-size: 20px;
+	font-weight: 600;
+	padding: 12px 24px;
+	background-color: #ffa54c;
+	border-radius: 5px;
+	border: none;
+	cursor: pointer;
+	box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+	transition: 0.3 ease-in-out;
+}
+
+.tombol_lp6_1:hover {
+	background-color: #ff8c00;
+}
+
+/* Page 7 */
+
+.landing_page7 {
+	background-color: #00879E;
+	padding: 50px 0;
+	display: flex;
+	justify-content: center;
+}
+
+.footer-container {
+	display: flex;
+    justify-content: space-between;
+    width: 80%;
+    max-width: 1000px;
+	background-color: #f7e4c4;
+	padding: 50px;
+}
+
+.footer_lp7 {
+	max-width: 300px;
+}
+
+.footer_lp7 h4 {
+	font-family: 'Inria Serif', sans-serif;
+	font-size: 20px;
+	font-weight: 400;
+	margin-bottom: 15px;
+}
+
+.footer_lp7 p {
+	font-family: 'Inria Serif', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 10px;	
+}
+
+.footer_lp7 p img {
+	width: 20px;
+	height: 20px;
+
+}
+
+.footer_lp7 small {
+	font-family: 'Inria Serif', sans-serif;
+	font-size: 10px;
+	font-weight: 400;
+}
+
+.footer_lp7 ul {
+	list-style-type: none;
+}
+
+.footer_lp7 ul li {
+	font-family: 'Inria Serif', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+}
