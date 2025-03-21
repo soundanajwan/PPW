@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan 2</title>
+    <style>
+        nav ul {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+            padding: 2% 10%;
+            background-color: black;
+            justify-content: center;
+        }
+
+        nav ul li a {
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            nav ul li a {
+            color: yellow;
+            }
+
+        }
+
+        @media (max-width: 480px) {
+            nav ul {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            nav ul li a {
+            color: red;
+            }
+
+        }
+
+        
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">Kaela</a></li>
+            <li><a href="#">Zeta</a></li>
+            <li><a href="#">Kobo</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

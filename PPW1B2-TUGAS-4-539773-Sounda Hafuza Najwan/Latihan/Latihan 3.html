@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan 3</title>
+    <link rel="stylesheet" href="latihan.css">
+    <style>
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            background-color: black;
+            padding: 15px 2%;
+          
+        }
+
+        header h1 {
+            font-size: 48px;
+            font-weight: 600;
+            color: white;
+        }
+
+        header nav ul {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            list-style: none;
+            gap: 10px;
+            padding: 0;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: blue;
+            font-size: 18px;
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 100%;
+            margin: 3% auto;
+        }
+
+        .hero img {
+            max-width: 80%;
+            height: auto;
+        }
+
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: red;
+            width: 30%;
+            padding: 1rem;
+            text-align: left;
+            color: white;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                background-color: black;
+                padding: 1% 2%;
+                text-align: center;
+            }
+
+            header nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero img {
+                max-width: 90%;
+            }
+
+            .grid {
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                margin-top: 2%;
+                gap: 20px;
+            }
+
+            .card {
+                text-align: left;
+                width: 30%;
+            }
+        }
+
+        @media (max-width: 425px) {
+            header {
+                text-align: center;
+            }
+
+            header nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero img {
+                max-width: 90%;
+            }
+
+            .grid {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                margin-top: 2%;
+                gap: 20px;
+                margin: auto;
+            }
+
+            .card {
+                text-align: left;
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Responsive Website</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <h2>Welcome to My Site</h2>
+            <p>This is a fully responsive webpage.</p>
+            <img src="ABCD.jpg" alt="Hero Image">
+        </section>
+        <section class="grid">
+            <div class="card">Card 1</div>
+            <div class="card">Card 2</div>
+            <div class="card">Card 3</div>
+        </section>
+    </main>
+</body>
+</html>

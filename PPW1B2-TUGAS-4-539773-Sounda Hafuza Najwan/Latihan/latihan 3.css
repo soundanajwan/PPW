@@ -1,0 +1,76 @@
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0% 2%;
+    background-color: black;
+}
+
+header h1 {
+    font-size: 48px;
+    font-weight: 600;
+    color: white;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    padding: 0;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    margin: 10% auto;
+}
+
+.hero h2 {
+   margin-bottom: 0%;
+}
+
+.hero p {
+    margin-bottom: 5%;
+}
+
+.hero image {
+    height: auto;
+    max-width: 80%;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+}
+
+.card {
+    background: red;
+    width: 30%;
+    padding: 1% 0;
+}
+
+/* 768px */
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header img {
+
+    }
+}
