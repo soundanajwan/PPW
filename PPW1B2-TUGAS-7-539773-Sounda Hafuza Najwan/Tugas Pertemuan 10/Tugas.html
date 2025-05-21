@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <title>Uji Coba JS</title>
+    </head>
+    <body>
+        
+        <!-- Tugas No 1 -->
+        <a href="#" onclick="konfirmasi()"><h1>ABSEN BANG?</h1></a>
+        <script>
+            function konfirmasi() {
+                var a = confirm("Apakah kamu hadir?")
+                if (a) {
+                    console.log("Hadir")
+                }
+                else {
+                    console.log("Tidak Hadir")
+                }
+            }
+        </script>
+
+        <!-- Tugas No 2 -->
+
+        <button onclick="isian()">Bilangan 1</button>
+        <button onclick="isian2()">Bilangan 2</button>
+        <button onclick="hasil()">Hasil</button>
+        <script>
+            var angka1
+            var angka2
+
+            function isian() {
+                 a = prompt("Masukan bilangan pertama: ")
+                 angka1 = Number(a)
+            }
+
+            function isian2() {
+                 c = prompt("Masukan bilangan kedua: ")
+                 angka2 = Number(c)
+
+            }
+            function hasil() {
+                if (angka1 == '' || angka2 == '') {
+                    alert("Anda belum mengisi salah satu atau seluruh bilangan")
+                }
+                else {
+                e = angka1*angka2
+                alert("Hasilnya adalah "+ e)
+                }
+            }
+        
+        </script>
+
+        <!-- Tugas No 3 -->
+
+        <script>
+            var a1 = confirm("Apakah anda mahasiswa TRPL?")
+            if (a1) {
+                b1 = prompt("Masukkan nama anda: ")
+                document.write("Selamat datang, "+b1)
+            }
+            else {
+                alert("Anda dilarang masuk!")
+            }
+        </script>
+
+    </body>
+</html>
