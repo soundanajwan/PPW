@@ -1,0 +1,9 @@
+Array
+(
+    [id] => PD002
+    [nama] => Buku Tulis 38 Lbr
+    [kategori] => Alat Tulis
+    [supplier] => SP001
+    [stok] => 70
+    [harga] => 5000
+)
