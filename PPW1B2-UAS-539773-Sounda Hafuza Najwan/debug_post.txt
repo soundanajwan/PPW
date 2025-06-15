@@ -1,9 +1,0 @@
-Array
-(
-    [Tanggal2] => 2025-06-11
-    [IDP2] => BU021
-    [ID2] => DB021
-    [Supplier2] => SP001
-    [Produk2] => PD021
-    [Jumlah2] => 5
-)

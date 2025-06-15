@@ -1,9 +1,0 @@
-Array
-(
-    [id] => PD021
-    [nama] => Baseus Encok
-    [kategori] => Elektronik
-    [supplier] => SP001
-    [stok] => 0
-    [harga] => 100000
-)
