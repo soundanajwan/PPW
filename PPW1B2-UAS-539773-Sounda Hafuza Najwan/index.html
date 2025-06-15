@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Login Page</title>
+
+  <!-- Bootstrap & Google Fonts -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Esteban&family=Noto+Sans:wght@400;800&display=swap" rel="stylesheet">
+
+  <style>
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      font-family: 'Noto Sans', sans-serif;
+    }
+
+    .login {
+      height: 100vh;
+      display: flex;
+      flex-direction: row;
+    }
+
+    .form-section {
+      flex: 1;
+      padding: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: #fff;
+    }
+
+    .judulBesar {
+      font-size: 32px;
+      font-weight: 800;
+      max-width: 400px;
+    }
+
+    .informasi {
+      font-family: 'Esteban', serif;
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
+
+    .form-floating {
+      padding-bottom: 20px;
+    }
+
+    .btn-login {
+      background-color: #269A5C;
+      color: white;
+      width: 100%;
+    }
+
+    .btn-login:hover {
+      background-color: #1e7a4b;
+      color: white;
+    }
+
+    .more {
+      padding-top: 20px;
+      display: flex;
+      gap: 5px;
+    }
+
+    .more a {
+      text-decoration: none;
+    }
+
+    .image-section {
+      flex: 1;
+      overflow: hidden;
+    }
+
+    .image-section img {
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+    }
+
+    @media (max-width: 768px) {
+      .login {
+        flex-direction: column;
+        height: auto;
+      }
+
+      .form-section {
+        padding: 30px;
+      }
+
+      .image-section {
+        height: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="login">
+    <div class="form-section">
+      <div class="judulBesar mb-2">Stationery Store's Inventory Management</div>
+      <div class="informasi">Please enter your username and password to log in</div>
+
+      <form id="loginForm">
+        <div class="mb-3">
+          <label for="username" class="form-label">Username</label>
+          <div class="form-floating">
+            <input id="username" name="username" type="text" class="form-control" placeholder="Username" required>
+            <label for="username">Username</label>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <div class="form-floating">
+            <input id="password" name="password" type="password" class="form-control" placeholder="Password" required>
+            <label for="password">Password</label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-login">Login</button>
+      </form>
+
+      <div class="more mt-3">
+        <p class="mb-0">Don't have any accounts?</p>
+        <a href="Sign up.html">Sign up here</a>
+      </div>
+
+      <div id="loginMessage" class="text-danger mt-3"></div>
+      <div id="message" class="text-center text-danger mt-3"></div>
+    </div>
+
+    <div class="image-section">
+      <img src="Login.jpg" alt="Login Illustration">
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const messageEl = document.getElementById("message");
+      const loginMessageEl = document.getElementById("loginMessage");
+      const usernameInput = document.getElementById("username");
+      const passwordInput = document.getElementById("password");
+
+      function showMessage(element, text) {
+        element.textContent = text;
+      }
+
+      function clearMessage(element) {
+        element.textContent = "";
+      }
+
+      function clearAllMessages() {
+        clearMessage(messageEl);
+        clearMessage(loginMessageEl);
+      }
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const message = urlParams.get('message');
+
+      if (message === 'logout') {
+        showMessage(messageEl, "Anda telah logout.");
+      } else if (message === 'needlogin') {
+        showMessage(messageEl, "Silakan login terlebih dahulu.");
+      }
+
+      if (message === 'logout' || message === 'needlogin') {
+        setTimeout(() => {
+          clearMessage(messageEl);
+          if (window.history.replaceState) {
+            const url = new URL(window.location);
+            url.searchParams.delete('message');
+            window.history.replaceState(null, '', url.toString());
+          }
+        }, 3000);
+      }
+
+      usernameInput.addEventListener("input", clearAllMessages);
+      passwordInput.addEventListener("input", clearAllMessages);
+
+      document.getElementById("loginForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const username = usernameInput.value.trim();
+        const password = passwordInput.value;
+
+        clearAllMessages();
+
+        if (username === "" || password.length < 6 || password.length > 20) {
+          showMessage(loginMessageEl, "Password minimal 6 karakter dan maksimal 20 karakter!");
+          return;
+        }
+
+        fetch("login.php", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: `username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`
+        })
+          .then(response => response.text())
+          .then(result => {
+            if (result.trim() === "success") {
+              window.location.href = "proteksiDashboard.php";
+            } else {
+              showMessage(loginMessageEl, result);
+            }
+          })
+          .catch(() => {
+            showMessage(loginMessageEl, "Terjadi kesalahan!");
+          });
+      });
+
+      window.addEventListener('pageshow', (event) => {
+        if (event.persisted) {
+          window.location.reload();
+        }
+      });
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
